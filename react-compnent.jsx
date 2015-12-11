@@ -1,7 +1,7 @@
-MyComponent = React.createClass({
+CounterButton = React.createClass({
     getInitialState() {
         return {
-            timesClicked: 0,
+            timesClicked: this.props.initialValue || 0,
             message: "Hello"
         }
     },
@@ -16,14 +16,16 @@ MyComponent = React.createClass({
     },
     onClick() {
         this.setState({
-            timesClick: this.state.timesClicked + 1
+            timesClick: this.state.timesClicked++
         });
     },
     render() {
         return (
             <div>
-                <button onClick={this.onClick}>My Button</button>
-                The button has been clicked {this.state.timesClicked}
+                <Box>
+                    <Button onClick={this.onClick} label="My Button" />
+                    The button has been clicked {this.state.timesClicked}
+                </Box>
             </div>
         )
     }
