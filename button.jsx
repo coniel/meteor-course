@@ -1,7 +1,9 @@
+var MUIButton = MUI.RaisedButton;
+
 Button = React.createClass({
     render() {
         return (
-            <button onClick={this.props.onClick}>{this.props.label}</button>
+            <MUIButton primary={true} onClick={this.props.onClick} label={this.props.label} />
         )
     }
 });
